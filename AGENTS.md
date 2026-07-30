@@ -4,62 +4,80 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-# Website Reverse-Engineer Template
+# MLForge Studio — Marketing Site
 
 ## What This Is
-A reusable template for reverse-engineering any website into a clean, modern Next.js codebase using AI coding agents. The Next.js + shadcn/ui + Tailwind v4 base is pre-scaffolded — just run `/clone-website <url1> [<url2> ...]`.
+
+The public marketing site for MLForge Studio, a software and AI delivery studio.
+Next.js App Router, deployed on Netlify.
 
 ## Tech Stack
+
 - **Framework:** Next.js 16 (App Router, React 19, TypeScript strict)
-- **UI:** shadcn/ui (Radix primitives, Tailwind CSS v4, `cn()` utility)
-- **Icons:** Lucide React (default — will be replaced/supplemented by extracted SVGs)
-- **Styling:** Tailwind CSS v4 with oklch design tokens
-- **Deployment:** Vercel
+- **Styling:** Tailwind CSS v4, design tokens in `src/app/globals.css`
+- **UI:** shadcn/ui primitives (Base UI), `cn()` utility
+- **Icons:** local SVGs in `src/components/icons.tsx`; `@ant-design/icons` in the hero console
+- **Deployment:** Netlify (`netlify.toml`, `@netlify/plugin-nextjs`)
 
 ## Commands
-- `npm run dev` — Start dev server
-- `npm run build` — Production build
-- `npm run lint` — ESLint check
-- `npm run typecheck` — TypeScript check
-- `npm run check` — Run lint + typecheck + build
+
+- `npm run dev` — start dev server
+- `npm run build` — production build
+- `npm run lint` — ESLint
+- `npm run typecheck` — TypeScript
+- `npm run check` — lint + typecheck + build
 
 ## Code Style
-- TypeScript strict mode, no `any`
-- Named exports, PascalCase components, camelCase utils
-- Tailwind utility classes, no inline styles
-- 2-space indentation
-- Responsive: mobile-first
 
-## Design Principles
-- **Pixel-perfect emulation** — match the target's spacing, colors, typography exactly
-- **No personal aesthetic changes during emulation phase** — match 1:1 first, customize later
-- **Real content** — use actual text and assets from the target site, not placeholders
-- **Beauty-first** — every pixel matters
+- TypeScript strict, no `any`
+- Named exports, PascalCase components, camelCase utils
+- Tailwind utility classes, no inline styles except dynamic animation delays
+- 2-space indentation, mobile-first responsive
+
+## Design System
+
+Tokens live in `@theme inline` in `src/app/globals.css` — colours, the type scale,
+radii and container widths. Use the token classes (`text-h2`, `bg-surface`,
+`text-ink-60`, `rounded-card`) rather than raw values.
+
+Content widths are `--container-column` (872px of content) and
+`--container-bleed` (1320px). `padding-inline` sits inside the border box, so the
+max-widths carry an extra 48px.
+
+## Motion
+
+- `transform` / `opacity` only — never animate `width`, `height`, `top` or `left`
+- Micro-interactions 150–300ms; complex transitions ≤400ms
+- Every animation must respect `prefers-reduced-motion` and leave content legible
+  when motion is off
+- Scroll reveals use `<Reveal>` (`src/components/reveal.tsx`), which is
+  IntersectionObserver-based with `<noscript>` and reduced-motion fallbacks
+- The hero console animates on one 20s CSS loop via the `.nova-a-*` classes.
+  Those classes carry the full `animation` shorthand on purpose — a shared parent
+  rule only reaches direct children, and nested elements would otherwise end up
+  with an animation name and no duration, never animating at all.
+
+## Content Rules
+
+- **Never invent testimonials, client names, logos, metrics or addresses.** Use
+  the clearly marked `PLACEHOLDER` blocks until real, cleared material arrives.
+- Don't put third-party brand names or logos into sample data.
+- Decorative illustrations must be `aria-hidden` so screen readers don't announce
+  sample figures as real data.
 
 ## Project Structure
+
 ```
 src/
-  app/              # Next.js routes
-  components/       # React components
-    ui/             # shadcn/ui primitives
-    icons.tsx       # Extracted SVG icons as React components
-  lib/
-    utils.ts        # cn() utility (shadcn)
-  types/            # TypeScript interfaces
-  hooks/            # Custom React hooks
+  app/              # routes: /, /company, /support, /category/all
+  components/
+    sections/       # page sections
+    ui/             # shared primitives
+    icons.tsx       # local SVG icons
+    hero-dashboard.tsx
+    reveal.tsx
+  lib/              # nav, posts, utils
+  hooks/
 public/
-  images/           # Downloaded images from target site
-  videos/           # Downloaded videos from target site
-  seo/              # Favicons, OG images, webmanifest
-docs/
-  research/         # Inspection output (design tokens, components, layout)
-  design-references/ # Screenshots and visual references
-scripts/            # Asset download scripts
+  images/  fonts/  videos/  seo/
 ```
-
-## MOST IMPORTANT NOTES
-- When launching Claude Code agent teams, ALWAYS have each teammate work in their own worktree branch and merge everyone's work at the end, resolving any merge conflicts smartly since you are basically serving the orchestrator role and have full context to our goals, work given, work achieved, and desired outcomes.
-- After editing `AGENTS.md`, run `bash scripts/sync-agent-rules.sh` to regenerate platform-specific instruction files.
-- After editing `.claude/skills/clone-website/SKILL.md`, run `node scripts/sync-skills.mjs` to regenerate the skill for all platforms.
-
-@docs/research/INSPECTION_GUIDE.md

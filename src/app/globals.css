@@ -5,126 +5,863 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* --- Nova palette --- */
+  --color-bg: #f3f3f3;
+  --color-surface: #ffffff;
+  --color-surface-2: #e6e6e6;
+  --color-ink: #000000;
+  --color-ink-60: rgb(0 0 0 / 0.6);
+  --color-ink-56: rgb(0 0 0 / 0.56);
+  --color-ink-08: rgb(0 0 0 / 0.08);
+  --color-brand: #1b2bb8;
+  --color-brand-hover: #16249a;
+  --color-brand-soft: #e2e4f6;
+  --color-dark: #000000;
+  --color-on-dark: #ffffff;
+  --color-on-dark-76: rgb(255 255 255 / 0.76);
+  --color-on-dark-56: rgb(255 255 255 / 0.56);
+  --color-on-dark-12: rgb(255 255 255 / 0.12);
+  --color-on-dark-08: rgb(255 255 255 / 0.08);
+  --color-danger: #f23731;
+  --color-success: #156949;
+  --color-success-bright: #13bb5c;
+
+  /* shadcn bridge */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
   --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
+  --color-ring: var(--ring);
   --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --font-sans: var(--font-general-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, monospace;
+
+  /* type scale — size/line-height/tracking mirror the target's computed styles */
+  --text-display: 4.25rem; /* 68 */
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.04em;
+  --text-display--font-weight: 500;
+
+  --text-h2: 3rem; /* 48 */
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.03em;
+  --text-h2--font-weight: 500;
+
+  --text-h3: 2.0625rem; /* 33 */
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.03em;
+  --text-h3--font-weight: 500;
+
+  --text-h4: 1.4375rem; /* 23 */
+  --text-h4--line-height: 1.2;
+  --text-h4--letter-spacing: -0.02em;
+  --text-h4--font-weight: 500;
+
+  --text-lead: 1.1875rem; /* 19 */
+  --text-lead--line-height: 1.3;
+  --text-lead--letter-spacing: -0.02em;
+
+  --text-body: 1rem; /* 16 */
+  --text-body--line-height: 1.3;
+  --text-body--letter-spacing: -0.02em;
+
+  --text-small: 0.875rem; /* 14 */
+  --text-small--line-height: 1.3;
+  --text-small--letter-spacing: -0.02em;
+
+  --text-label: 0.8125rem; /* 13 mono */
+  --text-label--line-height: 1;
+
+  --text-mono-xs: 0.75rem; /* 12 mono */
+  --text-mono-xs--line-height: 1.2;
+
+  --radius-card: 8px;
+  --radius-chip: 12px;
+  --radius-panel: 20px;
+  --radius-pill: 80px;
+
+  --shadow-card: 0 2px 14px rgb(0 0 0 / 0.05);
+  --shadow-float:
+    0 0.6px 1.6px -1.5px rgb(0 0 0 / 0.17), 0 2.3px 6px -3px rgb(0 0 0 / 0.14),
+    0 10px 26px -4.5px rgb(0 0 0 / 0.02);
+
+  /* Target content widths are 872px and 1320px; padding-inline is inside the
+     border box, so the max-widths carry the extra 48px. */
+  --container-column: 920px;
+  --container-bleed: 1368px;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Mono";
+  src: url("/fonts/DMMono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --font-general-sans: "General Sans";
+  --font-dm-mono: "DM Mono";
+  --background: #f3f3f3;
+  --foreground: #000000;
+  --border: rgb(0 0 0 / 0.08);
+  --ring: #1b2bb8;
+  --muted-foreground: rgb(0 0 0 / 0.56);
+  --radius: 0.5rem;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
-    @apply font-sans;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
   }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-size: var(--text-body);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  /* Tailwind Preflight resets button cursor; restore the affordance. */
+  button:not(:disabled),
+  [role="tab"],
+  summary,
+  label:has(input[type="checkbox"]) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  /* Reduce the 300ms tap delay on touch devices. */
+  a,
+  button,
+  [role="tab"] {
+    touch-action: manipulation;
+  }
+
+  /* Visible, consistent keyboard focus everywhere (target had none). */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility container-column {
+  width: 100%;
+  max-width: var(--container-column);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@utility container-bleed {
+  width: 100%;
+  max-width: var(--container-bleed);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* Logo marquee */
+@keyframes nova-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.nova-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: nova-marquee 32s linear infinite;
+}
+
+.nova-marquee:hover .nova-marquee-track,
+.nova-marquee:focus-within .nova-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nova-marquee-track {
+    animation: none;
+  }
+}
+
+/* --- Hero dashboard "live session" ----------------------------------------
+   One 20s loop assembled from short beats, so each individual move stays in the
+   150-300ms micro-interaction band while the whole thing reads as a continuous
+   working session. transform / opacity / colour / stroke-dashoffset only —
+   nothing in here triggers layout. */
+
+/* Pointer beat map. Every animation below is timed against these percentages. */
+@keyframes nova-cursor {
+  0%,
+  4% {
+    transform: translate3d(56%, 78%, 0);
+  }
+  8%,
+  12% {
+    transform: translate3d(74%, 5%, 0);
+  }
+  18%,
+  23% {
+    transform: translate3d(44%, 24%, 0);
+  }
+  30%,
+  35% {
+    transform: translate3d(14%, 46%, 0);
+  }
+  42%,
+  47% {
+    transform: translate3d(88%, 34%, 0);
+  }
+  54%,
+  59% {
+    transform: translate3d(41%, 58%, 0);
+  }
+  66%,
+  71% {
+    transform: translate3d(63%, 70%, 0);
+  }
+  78%,
+  86% {
+    transform: translate3d(19%, 88%, 0);
+  }
+  94%,
+  100% {
+    transform: translate3d(56%, 78%, 0);
+  }
+}
+
+/* Ripple fires only where the pointer has settled. */
+@keyframes nova-click {
+  0%,
+  8%,
+  100% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  9% {
+    opacity: 0.5;
+    transform: scale(0.4);
+  }
+  13% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+  20% {
+    opacity: 0.5;
+    transform: scale(0.4);
+  }
+  24% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+  32% {
+    opacity: 0.5;
+    transform: scale(0.4);
+  }
+  36% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+  44% {
+    opacity: 0.5;
+    transform: scale(0.4);
+  }
+  48% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+  56% {
+    opacity: 0.5;
+    transform: scale(0.4);
+  }
+  60% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+  68% {
+    opacity: 0.5;
+    transform: scale(0.4);
+  }
+  72% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+  81% {
+    opacity: 0.5;
+    transform: scale(0.4);
+  }
+  85% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+}
+
+@keyframes nova-press {
+  0%,
+  8%,
+  13%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  12% {
+    transform: scale(0.96);
+  }
+}
+
+/* Run lifecycle: queued -> running -> success. */
+@keyframes nova-status-running {
+  0%,
+  11% {
+    opacity: 0;
+  }
+  13%,
+  44% {
+    opacity: 1;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes nova-status-done {
+  0%,
+  44% {
+    opacity: 0;
+  }
+  46%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* scaleX rather than width, so the bar cannot reflow its row. */
+@keyframes nova-progress {
+  0%,
+  12% {
+    transform: scaleX(0);
+  }
+  44%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes nova-flow {
+  to {
+    stroke-dashoffset: -64;
+  }
+}
+
+@keyframes nova-node-active {
+  0%,
+  14% {
+    box-shadow: 0 0 0 0 rgb(27 43 184 / 0);
+  }
+  20% {
+    box-shadow: 0 0 0 3px rgb(27 43 184 / 0.18);
+  }
+  34%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(27 43 184 / 0);
+  }
+}
+
+@keyframes nova-log-in {
+  0%,
+  14% {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+  20%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Log list nudges up as later rows arrive. */
+@keyframes nova-log-scroll {
+  0%,
+  30% {
+    transform: translate3d(0, 0, 0);
+  }
+  38%,
+  62% {
+    transform: translate3d(0, -20px, 0);
+  }
+  70%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Sparkline draws itself while the run is in flight. */
+@keyframes nova-spark {
+  0%,
+  12% {
+    stroke-dashoffset: 240;
+  }
+  44%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Inspector reacts to the node selected at 32%. */
+@keyframes nova-focus {
+  0%,
+  32% {
+    box-shadow: 0 0 0 0 rgb(27 43 184 / 0);
+    border-color: rgb(0 0 0 / 0.08);
+  }
+  36%,
+  62% {
+    box-shadow: 0 0 0 3px rgb(27 43 184 / 0.14);
+    border-color: rgb(27 43 184 / 0.5);
+  }
+  68%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(27 43 184 / 0);
+    border-color: rgb(0 0 0 / 0.08);
+  }
+}
+@keyframes nova-inspector-swap {
+  0%,
+  32% {
+    opacity: 0;
+    transform: translate3d(0, 4px, 0);
+  }
+  38%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Toggle thrown at 44%, and it stays thrown. */
+@keyframes nova-toggle-knob {
+  0%,
+  44% {
+    transform: translate3d(0, 0, 0);
+  }
+  47%,
+  100% {
+    transform: translate3d(14px, 0, 0);
+  }
+}
+@keyframes nova-toggle-track {
+  0%,
+  44% {
+    background-color: rgb(0 0 0 / 0.08);
+  }
+  47%,
+  100% {
+    background-color: #1b2bb8;
+  }
+}
+
+/* Temperature slider dragged just after the toggle. */
+@keyframes nova-slider {
+  0%,
+  47% {
+    transform: translate3d(0, 0, 0);
+  }
+  52%,
+  100% {
+    transform: translate3d(26px, 0, 0);
+  }
+}
+@keyframes nova-slider-fill {
+  0%,
+  47% {
+    transform: scaleX(0.35);
+  }
+  52%,
+  100% {
+    transform: scaleX(0.72);
+  }
+}
+
+/* Zoom stepped at 56% — two stacked labels crossfade. */
+@keyframes nova-zoom-a {
+  0%,
+  55% {
+    opacity: 1;
+  }
+  58%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes nova-zoom-b {
+  0%,
+  55% {
+    opacity: 0;
+  }
+  58%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes nova-canvas-zoom {
+  0%,
+  55% {
+    transform: scale(1);
+  }
+  60%,
+  100% {
+    transform: scale(1.015);
+  }
+}
+
+/* Log filter switched from All to Warnings at 68%. */
+@keyframes nova-chip-all {
+  0%,
+  67% {
+    background-color: #1b2bb8;
+    color: #ffffff;
+  }
+  70%,
+  100% {
+    background-color: rgb(0 0 0 / 0.08);
+    color: rgb(0 0 0 / 0.6);
+  }
+}
+@keyframes nova-chip-warn {
+  0%,
+  67% {
+    background-color: rgb(0 0 0 / 0.08);
+    color: rgb(0 0 0 / 0.6);
+  }
+  70%,
+  100% {
+    background-color: #1b2bb8;
+    color: #ffffff;
+  }
+}
+
+/* Chat reply. */
+@keyframes nova-typing {
+  0%,
+  82% {
+    opacity: 0;
+  }
+  84%,
+  90% {
+    opacity: 1;
+  }
+  92%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes nova-reply-in {
+  0%,
+  90% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  95%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes nova-dot {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+/* Notification badge pops when the warning lands. */
+@keyframes nova-badge {
+  0%,
+  26% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  30%,
+  34% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  38%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Presence dot breathes throughout. */
+@keyframes nova-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/*
+  Full shorthand per class rather than a shared `.nova-live > *` rule: most of
+  these elements are nested several levels deep, so a direct-child selector left
+  them with an animation-name and no duration — the animation never ran and the
+  element sat in its resting (visible) state.
+*/
+.nova-a-cursor,
+.nova-a-click,
+.nova-a-press,
+.nova-a-running,
+.nova-a-done,
+.nova-a-progress,
+.nova-a-node,
+.nova-a-log,
+.nova-a-logscroll,
+.nova-a-spark,
+.nova-a-focus,
+.nova-a-inspector,
+.nova-a-knob,
+.nova-a-track,
+.nova-a-slider,
+.nova-a-sliderfill,
+.nova-a-zoom-a,
+.nova-a-zoom-b,
+.nova-a-canvas,
+.nova-a-chip-all,
+.nova-a-chip-warn,
+.nova-a-typing,
+.nova-a-reply,
+.nova-a-badge {
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+}
+
+.nova-a-cursor {
+  animation-name: nova-cursor;
+}
+.nova-a-click {
+  animation-name: nova-click;
+}
+.nova-a-press {
+  animation-name: nova-press;
+}
+.nova-a-running {
+  animation-name: nova-status-running;
+}
+.nova-a-done {
+  animation-name: nova-status-done;
+}
+.nova-a-progress {
+  animation-name: nova-progress;
+  transform-origin: left center;
+}
+.nova-a-node {
+  animation-name: nova-node-active;
+}
+.nova-a-log {
+  animation-name: nova-log-in;
+}
+.nova-a-logscroll {
+  animation-name: nova-log-scroll;
+}
+.nova-a-spark {
+  animation-name: nova-spark;
+}
+.nova-a-focus {
+  animation-name: nova-focus;
+}
+.nova-a-inspector {
+  animation-name: nova-inspector-swap;
+}
+.nova-a-knob {
+  animation-name: nova-toggle-knob;
+}
+.nova-a-track {
+  animation-name: nova-toggle-track;
+}
+.nova-a-slider {
+  animation-name: nova-slider;
+}
+.nova-a-sliderfill {
+  animation-name: nova-slider-fill;
+  transform-origin: left center;
+}
+.nova-a-zoom-a {
+  animation-name: nova-zoom-a;
+}
+.nova-a-zoom-b {
+  animation-name: nova-zoom-b;
+}
+.nova-a-canvas {
+  animation-name: nova-canvas-zoom;
+  transform-origin: center top;
+}
+.nova-a-chip-all {
+  animation-name: nova-chip-all;
+}
+.nova-a-chip-warn {
+  animation-name: nova-chip-warn;
+}
+.nova-a-typing {
+  animation-name: nova-typing;
+}
+.nova-a-reply {
+  animation-name: nova-reply-in;
+}
+.nova-a-badge {
+  animation-name: nova-badge;
+}
+
+.nova-a-flow {
+  animation: nova-flow 1.1s linear infinite;
+}
+.nova-a-dot {
+  animation: nova-dot 0.9s ease-in-out infinite;
+}
+.nova-a-pulse {
+  animation: nova-pulse 2.4s ease-in-out infinite;
+}
+
+/*
+  Motion is decoration on top of a legible still. Freezing the loop leaves the
+  dashboard in its finished state — success badge, filled progress, all logs and
+  the reply present — rather than mid-run with content missing.
+*/
+@media (prefers-reduced-motion: reduce) {
+  .nova-live *,
+  .nova-live *::before,
+  .nova-live *::after {
+    animation: none !important;
+  }
+  .nova-live [data-live="cursor"],
+  .nova-live [data-live="running"],
+  .nova-live [data-live="typing"],
+  .nova-live [data-live="zoom-a"] {
+    display: none !important;
+  }
+  .nova-live [data-live="done"],
+  .nova-live [data-live="log"],
+  .nova-live [data-live="reply"],
+  .nova-live [data-live="inspector"],
+  .nova-live [data-live="badge"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .nova-live [data-live="progress"] {
+    transform: scaleX(1) !important;
+  }
+  .nova-live [data-live="spark"] {
+    stroke-dashoffset: 0 !important;
+  }
+  .nova-live [data-live="knob"] {
+    transform: translate3d(14px, 0, 0) !important;
+  }
+  .nova-live [data-live="track"] {
+    background-color: #1b2bb8 !important;
+  }
+}
+
+/* --- Scroll reveal ---------------------------------------------------------
+   Matches the target: fade from 0 with a 40px offset, direction per element.
+   400ms ease-out, transform/opacity only so nothing reflows. */
+[data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal="up"] {
+  transform: translate3d(0, 40px, 0);
+}
+[data-reveal="left"] {
+  transform: translate3d(-40px, 0, 0);
+}
+[data-reveal="right"] {
+  transform: translate3d(40px, 0, 0);
+}
+[data-reveal="none"] {
+  transform: none;
+}
+
+[data-reveal][data-revealed] {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Motion is an enhancement — never a precondition for reading the page. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Subtle dotted field behind the sticky step phone */
+.nova-dotfield {
+  background-image: radial-gradient(rgb(0 0 0 / 0.12) 1px, transparent 1px);
+  background-size: 14px 14px;
 }

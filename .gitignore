@@ -47,3 +47,14 @@ next-env.d.ts
 
 # Local temp files
 temp/
+
+# Scraped reference material from the cloned target — large, and not ours to redistribute
+docs/design-references/
+docs/research/raw/
+
+# Local scratch probes
+scratch-*.mjs
+scratch-*.js
+
+# Local agent tooling — not part of the site, and third-party skills are not ours to redistribute
+.claude/
