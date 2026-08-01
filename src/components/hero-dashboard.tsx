@@ -2,10 +2,8 @@
 
 import {
   AppstoreOutlined,
-  CalendarOutlined,
   CheckCircleFilled,
   ContactsOutlined,
-  DollarOutlined,
   DownOutlined,
   ExclamationCircleFilled,
   ExpandOutlined,
@@ -13,17 +11,13 @@ import {
   FunnelPlotOutlined,
   InfoCircleFilled,
   LineChartOutlined,
-  MailOutlined,
   PlayCircleFilled,
-  RiseOutlined,
-  RobotOutlined,
   SaveOutlined,
   SendOutlined,
   SettingOutlined,
   ShareAltOutlined,
   SyncOutlined,
   TeamOutlined,
-  ThunderboltFilled,
   ZoomInOutlined,
   ZoomOutOutlined,
 } from "@ant-design/icons";
@@ -39,31 +33,26 @@ import {
 
 const RAIL = [
   { icon: AppstoreOutlined, label: "Overview" },
-  { icon: FunnelPlotOutlined, label: "Pipeline", active: true },
-  { icon: ContactsOutlined, label: "Contacts" },
-  { icon: TeamOutlined, label: "Accounts" },
+  { icon: TeamOutlined, label: "Companies", active: true },
+  { icon: ContactsOutlined, label: "People" },
+  { icon: FunnelPlotOutlined, label: "Opportunities" },
   { icon: LineChartOutlined, label: "Forecast", badge: "2" },
   { icon: SettingOutlined, label: "Settings" },
 ];
 
-const TABS = ["Board", "Activity", "Forecast"];
+const TABS = ["Table", "Board", "Timeline"];
 
 const METRICS = [
-  { label: "Pipeline", value: "$1.24M", delta: "+8.2%" },
+  { label: "Companies", value: "1,204", delta: "+8.2%" },
   { label: "Win rate", value: "31.4%", delta: "+2.6" },
-  { label: "Avg deal", value: "$18.6k", delta: "+4.1%" },
+  { label: "Pipeline", value: "$1.24M", delta: "+4.1%" },
 ];
 
-const NODES = [
-  { icon: RiseOutlined, title: "Lead scoring", meta: "Model v24" },
-  { icon: ContactsOutlined, title: "Enrichment", meta: "Firmographics" },
-  { icon: MailOutlined, title: "Outreach", meta: "Sequence" },
-  { icon: CalendarOutlined, title: "Meeting booking", meta: "Calendar" },
-];
-
-const TOOLS = [
-  { icon: DollarOutlined, title: "score_lead", meta: "Tool · 42ms" },
-  { icon: MailOutlined, title: "draft_reply", meta: "Tool · 18ms" },
+const COMPANIES = [
+  { name: "Northwind Retail", owner: "A. Reyes", value: "$24,000", icp: true },
+  { name: "Lakeside Robotics", owner: "M. Kwan", value: "$61,500", icp: true },
+  { name: "Vertex Logistics", owner: "S. Dutta", value: "$9,200", icp: false },
+  { name: "Harbor & Finch", owner: "A. Reyes", value: "$38,000", icp: true },
 ];
 
 const LOGS = [
@@ -264,135 +253,52 @@ export function HeroDashboard() {
           {/* Canvas */}
           <div className="relative px-3 pt-5 pb-3 sm:px-6 sm:pt-6">
             <div className="nova-a-canvas">
-              {/* Trigger node */}
-              <div className="flex justify-center">
-                <span className="inline-flex items-center gap-1.5 rounded-pill border border-ink-08 bg-surface px-2.5 py-1 font-mono text-[10px] tracking-[0.06em] text-ink-60 uppercase">
-                  <ThunderboltFilled className="text-[10px] text-[#b5651d]" />
-                  New inbound lead
+              {/* Toolbar row */}
+              <div className="flex items-center gap-2 pb-2.5">
+                <span className="text-small font-medium">All companies</span>
+                <span className="rounded-pill bg-ink-08 px-2 py-0.5 font-mono text-[10px] text-ink-56">
+                  {COMPANIES.length}
+                </span>
+                <span className="ml-auto inline-flex items-center gap-1.5 rounded-pill border border-ink-08 bg-surface px-2.5 py-1 font-mono text-[10px] text-ink-60">
+                  <ZoomInOutlined className="text-[9px] text-brand" />
+                  New
                 </span>
               </div>
 
-              <svg
-                viewBox="0 0 200 24"
-                preserveAspectRatio="none"
-                className="h-[22px] w-full"
-              >
-                <path
-                  d="M100 0 V24"
-                  fill="none"
-                  stroke="#1b2bb8"
-                  strokeOpacity="0.35"
-                  strokeWidth="1.5"
-                  strokeDasharray="5 7"
-                  className="nova-a-flow"
-                />
-              </svg>
-
-              {/* Agent node */}
-              <div className="flex justify-center">
-                <div className="w-[230px] rounded-card border border-brand/40 bg-surface p-3 shadow-card sm:w-[270px]">
-                  <span className="flex items-center gap-2">
-                    <span className="grid size-6 place-items-center rounded-[7px] bg-brand/12 text-brand">
-                      <RobotOutlined className="text-[12px]" />
-                    </span>
-                    <span className="text-small font-medium">
-                      Lead scoring agent
-                    </span>
-
-                    <span className="relative ml-auto">
-                      <span
-                        data-live="running"
-                        className="nova-a-running inline-flex items-center gap-1 rounded-pill bg-brand-soft px-2 py-0.5 font-mono text-[9px] tracking-[0.06em] text-brand uppercase"
-                      >
-                        Running
-                      </span>
-                      <span
-                        data-live="done"
-                        className="nova-a-done absolute inset-0 inline-flex items-center gap-1 rounded-pill bg-[#cfe9dc] px-2 py-0.5 font-mono text-[9px] tracking-[0.06em] text-[#12523a] uppercase"
-                      >
-                        Success
-                      </span>
-                    </span>
-                  </span>
-
-                  <span className="mt-2 block font-mono text-[10px] text-ink-56">
-                    gpt-class · 6 tools · v24
-                  </span>
-
-                  {/* Run progress — scaleX so it cannot reflow the card. */}
-                  <span className="mt-2 block h-1 w-full overflow-hidden rounded-pill bg-ink-08">
-                    <span
-                      data-live="progress"
-                      className="nova-a-progress block h-full w-full rounded-pill bg-brand"
-                    />
-                  </span>
-                </div>
+              {/* Column header */}
+              <div className="grid grid-cols-[1fr_88px_84px_64px] gap-2 border-b border-ink-08 pb-2 font-mono text-[10px] tracking-[0.06em] text-ink-56 uppercase">
+                <span>Company</span>
+                <span>Owner</span>
+                <span>Value</span>
+                <span>ICP</span>
               </div>
 
-              {/* Fan-out connectors */}
-              <svg
-                viewBox="0 0 800 70"
-                preserveAspectRatio="none"
-                className="h-[44px] w-full sm:h-[56px]"
-              >
-                {[100, 300, 500, 700].map((x) => (
-                  <path
-                    key={x}
-                    d={`M400 0 V28 H${x} V70`}
-                    fill="none"
-                    stroke="#1b2bb8"
-                    strokeOpacity="0.35"
-                    strokeWidth="1.5"
-                    strokeDasharray="5 7"
-                    className="nova-a-flow"
-                  />
-                ))}
-              </svg>
-
-              <ul className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
-                {NODES.map((node, i) => (
+              <ul>
+                {COMPANIES.map((row, i) => (
                   <li
-                    key={node.title}
-                    className="nova-a-node rounded-card border border-ink-08 bg-surface p-2.5"
-                    style={{ animationDelay: `${i * 0.5}s` }}
+                    key={row.name}
+                    className="nova-a-node grid grid-cols-[1fr_88px_84px_64px] items-center gap-2 border-b border-ink-08 py-2.5 last:border-0"
+                    style={{ animationDelay: `${i * 0.4}s` }}
                   >
-                    <span className="flex items-center gap-2">
-                      <span className="grid size-6 shrink-0 place-items-center rounded-[7px] bg-ink-08 text-ink-60">
-                        <node.icon className="text-[12px]" />
+                    <span className="flex min-w-0 items-center gap-2">
+                      <span className="grid size-6 shrink-0 place-items-center rounded-[6px] bg-brand-soft font-mono text-[9px] text-brand">
+                        {row.name.slice(0, 2).toUpperCase()}
                       </span>
-                      <span className="min-w-0">
-                        <span className="block truncate text-small font-medium">
-                          {node.title}
-                        </span>
-                        <span className="block font-mono text-[10px] text-ink-56">
-                          {node.meta}
-                        </span>
+                      <span className="truncate text-small font-medium">
+                        {row.name}
                       </span>
                     </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Tool row */}
-              <ul className="mt-2 grid grid-cols-2 gap-2 sm:gap-3">
-                {TOOLS.map((tool, i) => (
-                  <li
-                    key={tool.title}
-                    className="nova-a-node flex items-center gap-2 rounded-card border border-dashed border-ink-08 bg-surface/60 p-2.5"
-                    style={{ animationDelay: `${1 + i * 0.5}s` }}
-                  >
-                    <span className="grid size-6 shrink-0 place-items-center rounded-[7px] bg-ink-08 text-ink-60">
-                      <tool.icon className="text-[12px]" />
+                    <span className="truncate text-[11px] text-ink-56">
+                      {row.owner}
                     </span>
-                    <span className="min-w-0">
-                      <span className="block truncate font-mono text-[11px]">
-                        {tool.title}
-                      </span>
-                      <span className="block font-mono text-[10px] text-ink-56">
-                        {tool.meta}
-                      </span>
+                    <span className="truncate font-mono text-[11px] tabular-nums">
+                      {row.value}
                     </span>
-                    <CheckCircleFilled className="ml-auto text-[11px] text-success" />
+                    {row.icp ? (
+                      <CheckCircleFilled className="text-[12px] text-success" />
+                    ) : (
+                      <span className="size-1.5 rounded-full bg-ink-08" />
+                    )}
                   </li>
                 ))}
               </ul>

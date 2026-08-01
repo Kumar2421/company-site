@@ -6,10 +6,16 @@ import { CompanyHistory } from "@/components/sections/company-history";
 import { CompanyShowcase } from "@/components/sections/company-showcase";
 import { FinalCta } from "@/components/sections/final-cta";
 
+const TITLE = "Company";
+const DESCRIPTION =
+  "MLForge Studio builds software and AI systems for teams with a production estate to protect.";
+
 export const metadata: Metadata = {
-  title: "Company — MLForge Studio",
-  description:
-    "MLForge Studio builds software and AI systems for teams with a production estate to protect.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/company" },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: "/company" },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
 export default function CompanyPage() {

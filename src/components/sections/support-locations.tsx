@@ -10,32 +10,18 @@ import { MonoLabel } from "@/components/ui/mono-label";
  * Swap the photos for your actual cities too; the current images are the
  * placeholders carried over from the layout.
  */
-const LOCATIONS = [
-  {
-    city: "[Primary city]",
-    address: [
-      "[Registered entity name]",
-      "[Street address]",
-      "[City and postcode]",
-    ],
-    image: "/images/office-singapore.jpg",
-    alt: "",
-    /** Photo leads on desktop for the first row, trails for the second. */
-    imageFirst: true,
-  },
-  {
-    city: "[Second city]",
-    address: [
-      "[Registered entity name]",
-      "[Street address]",
-      "[City and postcode]",
-      "[Country]",
-    ],
-    image: "/images/office-amsterdam.jpg",
-    alt: "",
-    imageFirst: false,
-  },
-];
+const PRIMARY_LOCATION = {
+  city: "[Primary city]",
+  address: [
+    "[Registered entity name]",
+    "[Street address]",
+    "[City and postcode]",
+  ],
+  image: "/images/office-singapore.jpg",
+};
+
+/** Second row is image-only — no address card, just the two photos. */
+const GALLERY_IMAGES = ["/images/office-amsterdam.jpg", "/images/misc-1.png"];
 
 export function SupportLocations() {
   return (
@@ -49,37 +35,42 @@ export function SupportLocations() {
         </Reveal>
 
         <ul className="mt-8 grid gap-4">
-          {LOCATIONS.map((location, i) => (
-            <Reveal
-              as="li"
-              key={location.city}
-              delay={i * 50}
-              className="grid gap-4 md:grid-cols-2"
-            >
+          <Reveal as="li" className="grid gap-4 md:grid-cols-2">
+            <Image
+              src={PRIMARY_LOCATION.image}
+              alt=""
+              width={900}
+              height={680}
+              sizes="(max-width: 768px) 100vw, 424px"
+              className="aspect-[424/320] w-full rounded-card object-cover"
+            />
+
+            <div className="flex min-h-[320px] flex-col rounded-card bg-white p-8 shadow-card">
+              <h2 className="text-lead font-medium">{PRIMARY_LOCATION.city}</h2>
+
+              <address className="mt-auto pt-12 text-body text-ink-60 not-italic">
+                {PRIMARY_LOCATION.address.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </address>
+            </div>
+          </Reveal>
+
+          <Reveal as="li" delay={50} className="grid gap-4 md:grid-cols-2">
+            {GALLERY_IMAGES.map((src) => (
               <Image
-                src={location.image}
-                alt={location.alt}
+                key={src}
+                src={src}
+                alt=""
                 width={900}
                 height={680}
                 sizes="(max-width: 768px) 100vw, 424px"
-                className={`aspect-[424/320] w-full rounded-card object-cover ${
-                  location.imageFirst ? "" : "md:order-last"
-                }`}
+                className="aspect-[424/320] w-full rounded-card object-cover"
               />
-
-              <div className="flex min-h-[320px] flex-col rounded-card bg-white p-8 shadow-card">
-                <h2 className="text-lead font-medium">{location.city}</h2>
-
-                <address className="mt-auto pt-12 text-body text-ink-60 not-italic">
-                  {location.address.map((line) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
-                </address>
-              </div>
-            </Reveal>
-          ))}
+            ))}
+          </Reveal>
         </ul>
       </div>
     </section>

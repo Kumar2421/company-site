@@ -13,7 +13,7 @@ export function FinalCta() {
         </Reveal>
 
         <Reveal delay={100} className="mt-10">
-          <NovaButtonLink href="#contact" size="md">
+          <NovaButtonLink href="/support#contact" size="md">
             Book a discovery call
             <ButtonArrow />
           </NovaButtonLink>

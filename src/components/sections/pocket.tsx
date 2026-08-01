@@ -8,16 +8,16 @@ import { Reveal } from "@/components/reveal";
 
 const TABS = [
   {
-    title: "AI & machine learning",
-    body: "RAG, agents, forecasting and document workflows — with evals from day one.",
+    title: "AI Platform",
+    body: "Train, evaluate and deploy your own models from one console — RAG, agents and forecasting with evals from day one.",
   },
   {
-    title: "Product engineering",
-    body: "Web, mobile and internal tooling built by a senior embedded team.",
+    title: "CRM & social automation",
+    body: "A companies-and-deals CRM and a scheduling queue for every channel, both tailored to how your team actually sells.",
   },
   {
-    title: "Data platform",
-    body: "Pipelines, warehousing and governance so the AI has something to stand on.",
+    title: "Custom software",
+    body: "Web, mobile and internal tooling built by a senior embedded team, inside your own review process.",
   },
 ];
 
@@ -85,7 +85,7 @@ export function Pocket() {
               className="rounded-panel bg-on-dark-08 px-6 py-10"
             >
               <p className="text-center text-body text-on-dark-76">
-                Delivered alongside in-house teams
+                Trusted by teams like yours
               </p>
 
               <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -106,7 +106,7 @@ export function Pocket() {
               </ul>
 
               <p className="mt-8 text-center text-body text-on-dark-56">
-                Reach out if your bank can&rsquo;t be found
+                Don&rsquo;t see your industry? Let&rsquo;s talk.
               </p>
             </div>
             ))}

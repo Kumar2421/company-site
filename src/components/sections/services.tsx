@@ -13,33 +13,33 @@ import { MonoLabel } from "@/components/ui/mono-label";
 const SERVICES: { icon: ReactNode; title: string; body: string }[] = [
   {
     icon: <Sparkle className="size-5" />,
-    title: "AI & machine learning",
-    body: "Retrieval, agents, forecasting and document understanding — built with evaluation suites, not demos.",
-  },
-  {
-    icon: <Grid className="size-5" />,
-    title: "Custom software",
-    body: "Web applications, APIs and internal platforms delivered by a senior team inside your review process.",
-  },
-  {
-    icon: <Phone className="size-5" />,
-    title: "Mobile applications",
-    body: "iOS and Android for field teams and customers, including offline-first workflows.",
+    title: "AI platform",
+    body: "Train, evaluate and deploy your own models from one console — retrieval, agents and forecasting shipped with evaluation suites, not demos.",
   },
   {
     icon: <Workflow className="size-5" />,
-    title: "Automation & integration",
-    body: "Connecting the systems that already run your business, so manual handoffs stop being the bottleneck.",
-  },
-  {
-    icon: <BarChart className="size-5" />,
-    title: "Data & analytics",
-    body: "Pipelines, warehousing and reporting that give the business one number it can trust.",
+    title: "CRM",
+    body: "A companies-and-deals CRM built on the open-source Twenty core, tailored to your pipeline stages and ownership rules.",
   },
   {
     icon: <Bell className="size-5" />,
-    title: "Cloud & reliability",
-    body: "Infrastructure, delivery pipelines and monitoring, so what we ship keeps running without us.",
+    title: "Social media automation",
+    body: "Plan, schedule and publish across every channel from one queue, with sync status tracked per account.",
+  },
+  {
+    icon: <Grid className="size-5" />,
+    title: "Custom software development",
+    body: "Web applications, APIs and internal platforms delivered by a senior team inside your own review process.",
+  },
+  {
+    icon: <Phone className="size-5" />,
+    title: "App & website development",
+    body: "iOS, Android and marketing sites built to ship — not just prototype — for field teams and customers alike.",
+  },
+  {
+    icon: <BarChart className="size-5" />,
+    title: "AI automation & integration",
+    body: "Connecting the systems that already run your business, so manual handoffs stop being the bottleneck.",
   },
 ];
 
@@ -53,8 +53,9 @@ export function Services() {
             Services
           </MonoLabel>
 
-          <h2 className="mt-6 max-w-[24ch] text-h2 text-balance">
-            Everything from the first spec to the on-call rota.
+          <h2 className="mt-6 max-w-[28ch] text-h2 text-balance">
+            An AI platform, a CRM, social automation and the custom builds to
+            connect them.
           </h2>
         </Reveal>
 

@@ -202,6 +202,39 @@ export function ChevronsUp(props: IconProps) {
   );
 }
 
+export function ChevronDown(props: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" {...base} {...props}>
+      <path d="m5 8 5 5 5-5" />
+    </svg>
+  );
+}
+
+export function Heart(props: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" {...base} {...props}>
+      <path d="M10 16.5s-6-3.7-6-8.1A3.4 3.4 0 0 1 10 6a3.4 3.4 0 0 1 6 2.4c0 4.4-6 8.1-6 8.1Z" />
+    </svg>
+  );
+}
+
+export function Comment(props: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" {...base} {...props}>
+      <path d="M3 10a6.5 6.5 0 1 1 3.2 5.6L3 16.5l1-3.2A6.4 6.4 0 0 1 3 10Z" />
+    </svg>
+  );
+}
+
+export function MapPin(props: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" {...base} {...props}>
+      <path d="M10 17.5S15.5 12 15.5 8a5.5 5.5 0 1 0-11 0c0 4 5.5 9.5 5.5 9.5Z" />
+      <circle cx="10" cy="8" r="1.8" />
+    </svg>
+  );
+}
+
 export function Plane(props: IconProps) {
   return (
     <svg viewBox="0 0 20 20" {...base} {...props}>

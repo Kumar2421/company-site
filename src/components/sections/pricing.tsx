@@ -21,7 +21,7 @@ export function Pricing() {
   const [quarterly, setQuarterly] = useState(true);
 
   return (
-    <section className="py-20 sm:py-28">
+    <section id="pricing" className="py-20 sm:py-28">
       <div className="container-column text-center">
         <Reveal as="h2" className="text-h2">
           How we engage
@@ -62,7 +62,7 @@ export function Pricing() {
               })}
             </ul>
 
-            <NovaButtonLink href="#contact" variant="outline" className="mt-8 w-full">
+            <NovaButtonLink href="/support#contact" variant="outline" className="mt-8 w-full">
               Scope a discovery
             </NovaButtonLink>
           </Reveal>
@@ -117,7 +117,7 @@ export function Pricing() {
               ))}
             </ul>
 
-            <NovaButtonLink href="#contact" className="mt-8 w-full">
+            <NovaButtonLink href="/support#contact" className="mt-8 w-full">
               Talk about a pod
             </NovaButtonLink>
           </Reveal>

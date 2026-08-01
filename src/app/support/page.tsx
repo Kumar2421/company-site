@@ -4,11 +4,18 @@ import { SiteFooter } from "@/components/site-footer";
 import { SupportHero } from "@/components/sections/support-hero";
 import { SupportNumbers } from "@/components/sections/support-numbers";
 import { SupportLocations } from "@/components/sections/support-locations";
+import { ContactForm } from "@/components/sections/contact-form";
 import { FinalCta } from "@/components/sections/final-cta";
 
+const TITLE = "Support";
+const DESCRIPTION = "Talk to the people who would do the work.";
+
 export const metadata: Metadata = {
-  title: "Support — MLForge Studio",
-  description: "Talk to the people who would do the work.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/support" },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: "/support" },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
 export default function SupportPage() {
@@ -27,6 +34,17 @@ export default function SupportPage() {
         <SupportHero />
         <SupportNumbers />
         <SupportLocations />
+
+        <section className="container-column py-20 sm:py-28">
+          <h2 className="text-h2 text-center">Send a message</h2>
+          <p className="mx-auto mt-3 max-w-[46ch] text-center text-body text-ink-60">
+            Tell us about your project — we reply within one business day.
+          </p>
+          <div className="mt-10">
+            <ContactForm />
+          </div>
+        </section>
+
         <FinalCta />
       </main>
 
