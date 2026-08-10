@@ -21,7 +21,7 @@ const STEPS: {
     title: "Every deal, owner and account in one pipeline",
     body: "A companies-and-deals CRM built on the open-source Twenty core, tailored to your pipeline stages and ownership rules — no seat-priced black box.",
     panelTitle: "crm.mlforge.in",
-    href: "#",
+    href: "https://crm.mlforge.in",
     screen: <CrmTableScreen />,
   },
   {
@@ -29,15 +29,15 @@ const STEPS: {
     title: "Find who needs you before your competitors do",
     body: "Prospecting and enrichment surfaced against your ICP filters — search, tag and route leads straight into the pipeline, ranked by intent.",
     panelTitle: "leads.mlforge.in",
-    href: "#",
+    href: "https://leads.mlforge.in",
     screen: <LeadGenScreen />,
   },
   {
     kicker: "Social automation",
     title: "Plan a week of posts once, publish everywhere",
     body: "One queue schedules and publishes across every channel, with sync status tracked per account — built on the open-source Postiz core.",
-    panelTitle: "postriz.mlforge.in",
-    href: "#",
+    panelTitle: "social.mlforge.in",
+    href: "https://social.mlforge.in",
     screen: <SocialAutomationScreen />,
   },
 ];
@@ -61,6 +61,8 @@ export function Steps() {
               </p>
               <a
                 href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group mt-6 inline-flex min-h-11 items-center gap-2 text-body font-medium"
               >
                 Open {item.panelTitle}

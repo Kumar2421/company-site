@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { NovaLogo, Search } from "@/components/icons";
 import { MobileNav } from "@/components/mobile-nav";
-import { ButtonArrow } from "@/components/ui/nova-button";
-import { MonoLabel } from "@/components/ui/mono-label";
 import { CATEGORIES } from "@/lib/posts";
 import { cn } from "@/lib/utils";
 
@@ -25,15 +23,6 @@ export function BlogHeader({ active, onSelect }: BlogHeaderProps) {
       <div className="relative border-b border-ink-08">
         <div className="container-column flex h-[66px] items-center justify-between gap-6">
           {/* Ticker replaces the wordmark from md up; below that the brand returns. */}
-          <Link
-            href="/"
-            className="group hidden items-center gap-2 whitespace-nowrap md:inline-flex"
-          >
-            <MonoLabel className="text-ink">
-              Now booking Q3 discovery engagements
-            </MonoLabel>
-            <ButtonArrow className="text-ink" />
-          </Link>
 
           <Link
             href="/"

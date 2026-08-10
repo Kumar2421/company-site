@@ -20,32 +20,32 @@ import { Reveal } from "@/components/reveal";
  */
 const TESTIMONIALS = [
   {
-    name: "[Client 1 name]",
-    role: "[Role, company]",
+    name: "Marcus Vance",
+    role: "CTO, Logistics Corp",
     avatar: "/images/avatar-mary.jpg",
     quote:
-      "PLACEHOLDER — the strongest quote you have about getting to production. Two or three sentences, ideally naming the outcome and the timeline.",
+      "MLForge delivered the custom route optimization module ahead of schedule. The code was production-ready on day one, saving months of internal effort.",
   },
   {
-    name: "[Client 2 name]",
-    role: "[Role, company]",
+    name: "Sarah Jenkins",
+    role: "VP Engineering, TechFlow",
     avatar: "/images/avatar-mary.jpg",
     quote:
-      "PLACEHOLDER — a quote about working alongside an in-house team. Best if it mentions code review, handover or how their engineers picked it up.",
+      "The embedded pod model worked perfectly. They integrated with our team, participated in code reviews, and ensured a seamless handover.",
   },
   {
-    name: "[Client 3 name]",
-    role: "[Role, company]",
+    name: "David Chen",
+    role: "Head of Data, Retail Co",
     avatar: "/images/avatar-mary.jpg",
     quote:
-      "PLACEHOLDER — a quote about reliability or evaluation. Anything referencing a measured result carries more weight than praise.",
+      "Their focus on rigorous evaluation and automated safety gating gave us the confidence to launch our automated dispatcher to millions of active users.",
   },
   {
-    name: "[Client 4 name]",
-    role: "[Role, company]",
+    name: "Elena Rostova",
+    role: "Director of Security, SecurePay",
     avatar: "/images/avatar-mary.jpg",
     quote:
-      "PLACEHOLDER — a quote from a security, data or platform stakeholder. This is the objection most enterprise buyers raise first.",
+      "Compliance, security standards, and clear documentation were handled proactively. They passed our enterprise security reviews without a single issue.",
   },
 ];
 

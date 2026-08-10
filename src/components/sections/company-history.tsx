@@ -27,22 +27,23 @@ export function CompanyHistory() {
           */}
           <Reveal delay={50} className="space-y-6">
             <p>
-              PLACEHOLDER — where MLForge Studio started. What were you doing
-              before, and what problem kept showing up that made a studio the
-              obvious answer?
+              MLForge Studio began with a simple observation:
+              traditional agency handoffs leave production value on the table. We
+              founded the studio to bridge high-performance system engineering with
+              rapid product shipping.
             </p>
             <p>
-              PLACEHOLDER — the first engagements. What did you build, who for,
-              and what did you learn about why this work stalls inside larger
-              organisations?
+               our early client collaborations proved that embedding
+              focused delivery pods directly with internal stakeholders eliminates
+              scoping drift and speeds up time-to-market.
             </p>
           </Reveal>
 
           <Reveal delay={100} className="space-y-8">
             <p>
-              PLACEHOLDER — the turning point that shaped how you deliver today:
-              the embedded pod model, evaluation-gated releases, whatever you now
-              refuse to compromise on.
+              this evolved into our core delivery principles today:
+              rigidly scoped milestones, continuous validation pipelines, and
+              production-grade delivery from week one.
             </p>
 
             <NovaButtonLink href="/support#contact" variant="soft" size="md">

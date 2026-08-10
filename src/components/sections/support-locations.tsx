@@ -11,17 +11,17 @@ import { MonoLabel } from "@/components/ui/mono-label";
  * placeholders carried over from the layout.
  */
 const PRIMARY_LOCATION = {
-  city: "[Primary city]",
+  city: "Pukkulam ",
   address: [
-    "[Registered entity name]",
-    "[Street address]",
-    "[City and postcode]",
+    "4/12 South Street , Pukkulam ", 
+    "Udumalpet - 642154 , Tamil Nadu",
+    "Phone : +91 8190099614"
   ],
   image: "/images/office-singapore.jpg",
 };
 
 /** Second row is image-only — no address card, just the two photos. */
-const GALLERY_IMAGES = ["/images/office-amsterdam.jpg", "/images/misc-1.png"];
+// const GALLERY_IMAGES = ["/images/office-amsterdam.jpg", "/images/misc-1.png"];
 
 export function SupportLocations() {
   return (
@@ -58,7 +58,7 @@ export function SupportLocations() {
             </div>
           </Reveal>
 
-          <Reveal as="li" delay={50} className="grid gap-4 md:grid-cols-2">
+          {/* <Reveal as="li" delay={50} className="grid gap-4 md:grid-cols-2">
             {GALLERY_IMAGES.map((src) => (
               <Image
                 key={src}
@@ -70,7 +70,7 @@ export function SupportLocations() {
                 className="aspect-[424/320] w-full rounded-card object-cover"
               />
             ))}
-          </Reveal>
+          </Reveal> */}
         </ul>
       </div>
     </section>

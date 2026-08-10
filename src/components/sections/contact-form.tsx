@@ -14,17 +14,29 @@ const FIELDS = [
   },
 ] as const;
 
-/**
- * UI + validation only. No submit endpoint yet — api.mlforge.in isn't live,
- * so this stops at onSubmit and reports a local "sent" state instead of
- * posting anywhere.
- */
+/** Posts to /api/contact, which sends via Resend. */
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("sent");
+    setStatus("sending");
+
+    const data = Object.fromEntries(new FormData(event.currentTarget));
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error("Submit failed");
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   if (status === "sent") {
@@ -75,8 +87,19 @@ export function ContactForm() {
         />
       </label>
 
-      <NovaButton type="submit" size="md" className="mt-2 self-start">
-        Send message
+      {status === "error" && (
+        <p role="alert" className="text-small text-[#b5651d]">
+          Something went wrong — try again, or email us directly.
+        </p>
+      )}
+
+      <NovaButton
+        type="submit"
+        size="md"
+        disabled={status === "sending"}
+        className="mt-2 self-start"
+      >
+        {status === "sending" ? "Sending…" : "Send message"}
       </NovaButton>
     </form>
   );

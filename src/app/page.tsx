@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Hero } from "@/components/sections/hero";
-import { LogoMarquee } from "@/components/sections/logo-marquee";
 import { Statement } from "@/components/sections/statement";
 import { Features } from "@/components/sections/features";
 import { Pocket } from "@/components/sections/pocket";
@@ -31,7 +30,6 @@ export default function Home() {
 
       <main id="main" className="flex-1">
         <Hero />
-        <LogoMarquee />
         <Statement />
         <Features />
         <Pocket />

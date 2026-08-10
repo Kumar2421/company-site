@@ -7,12 +7,11 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden pt-24 pb-0 sm:pt-32">
       <div className="container-column text-center">
         <h1 className="text-[clamp(2.75rem,8vw,4.25rem)] leading-[1.02] font-medium tracking-[-0.04em] text-balance">
-          Take AI from pilot to production
+          Production-grade custom software & AI platforms
         </h1>
 
-        <p className="mx-auto mt-6 max-w-[34ch] text-lead text-ink-60 text-balance">
-          MLForge Studio designs, builds and runs AI and software inside the
-          systems your business already depends on.
+        <p className="mx-auto mt-6 max-w-[38ch] text-lead text-ink-60 text-balance">
+          MLForge Studio designs, architectures, and deploys high-performance custom software, CRM systems, and AI platforms engineered to scale with your enterprise.
         </p>
 
         <NovaButtonLink href="/support#contact" className="mt-8">

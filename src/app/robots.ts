@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://mlforge.in/sitemap.xml",
+    sitemap: "https://home.mlforge.in/sitemap.xml",
   };
 }

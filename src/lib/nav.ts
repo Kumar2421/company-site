@@ -1,22 +1,27 @@
 export const SERVICES_NAV = [
   {
     label: "AI Platform",
-    href: "#services",
+    href: "https://mlforge.in",
     description: "Unified training and deployment for AI models",
   },
   {
     label: "CRM",
-    href: "#services",
+    href: "https://crm.mlforge.in",
     description: "Open-source CRM, tailored to your pipeline",
   },
   {
     label: "Social Automation",
-    href: "#services",
+    href: "https://social.mlforge.in",
     description: "Schedule and publish across every channel",
   },
   {
-    label: "Custom Software",
-    href: "#services",
+    label: "Lottery Agency CRM",
+    href: "https://lottery.mlforge.in",
+    description: "Built for Lottery Agents and Retailers",
+  },
+  {
+    label: "Lead Management",
+    href: "https://lead.mlforge.in",
     description: "App, web and custom software development",
   },
 ] as const;

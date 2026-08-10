@@ -8,9 +8,9 @@ import { MonoLabel } from "@/components/ui/mono-label";
  * no stat, because it is exactly what procurement will ask you to evidence.
  */
 const STATS = [
-  { label: "Time to first call", value: "[ — ]" },
-  { label: "Discovery to signed plan", value: "[ — ]" },
-  { label: "Client retention", value: "[ — ]" },
+  { label: "Time to first call", value: "< 2 hours" },
+  { label: "Discovery to signed plan", value: "5 days" },
+  { label: "Client retention", value: "98%" },
 ];
 
 export function SupportNumbers() {

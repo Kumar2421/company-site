@@ -65,13 +65,25 @@ export function SiteFooter() {
 
           <div>
             <h2 className="text-body font-medium text-ink">Connect</h2>
-            <ul className="mt-5">
+            <ul className="mt-5 flex flex-col gap-2">
               <li>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/senthil-kumar-6786b6246/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex min-h-11 items-center text-body text-ink-56 transition-colors duration-150 hover:text-ink"
                 >
                   LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/mlforgestudio?igsh=N2E4cWUwYmllZ2Vz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center text-body text-ink-56 transition-colors duration-150 hover:text-ink"
+                >
+                  Instagram
                 </a>
               </li>
             </ul>
