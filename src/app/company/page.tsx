@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CompanyHero } from "@/components/sections/company-hero";
 import { CompanyHistory } from "@/components/sections/company-history";
+import { CompanySolutions } from "@/components/sections/company-solutions";
 import { CompanyShowcase } from "@/components/sections/company-showcase";
 import { FinalCta } from "@/components/sections/final-cta";
 
@@ -33,6 +34,7 @@ export default function CompanyPage() {
       <main id="main" className="flex-1">
         <CompanyHero />
         <CompanyHistory />
+        <CompanySolutions />
         <CompanyShowcase />
         <FinalCta />
       </main>

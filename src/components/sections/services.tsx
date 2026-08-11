@@ -6,6 +6,7 @@ import {
   BarChart,
   Workflow,
   Bell,
+  TrendUp,
 } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
 import { MonoLabel } from "@/components/ui/mono-label";
@@ -40,6 +41,11 @@ const SERVICES: { icon: ReactNode; title: string; body: string }[] = [
     icon: <BarChart className="size-5" />,
     title: "AI automation & integration",
     body: "Connecting the systems that already run your business, so manual handoffs stop being the bottleneck.",
+  },
+  {
+    icon: <TrendUp className="size-5" />,
+    title: "Lottery agency CRM",
+    body: "A dedicated CRM for lottery agencies — ticket sales, agent commissions and payouts tracked in one system.",
   },
 ];
 

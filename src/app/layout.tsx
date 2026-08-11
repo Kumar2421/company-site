@@ -60,9 +60,23 @@ const ORGANIZATION_JSON_LD = {
   description: DEFAULT_DESCRIPTION,
 };
 
+/*
+ * "image" is still the generic office-singapore.jpg placeholder — swap for a
+ * real photo of the Pukkulam address before launch, same as /support
+ * Locations. Left in rather than dropped so the field isn't silently missing.
+ *
+ * @type is ProfessionalService (a LocalBusiness subtype) rather than plain
+ * LocalBusiness — more accurate for a software studio, still valid for local
+ * search/maps.
+ *
+ * sameAs is reserved for profiles that ARE this same entity elsewhere
+ * (social profiles) — product subdomains (crm./social./lottery./lead.) are
+ * separate offerings, not identity duplicates, so they live in `makesOffer`
+ * instead rather than diluting the sameAs signal.
+ */
 const LOCAL_BUSINESS_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "name": "MLForge Studio",
   "image": "https://home.mlforge.in/images/office-singapore.jpg",
   "@id": "https://home.mlforge.in/#localbusiness",
@@ -71,8 +85,8 @@ const LOCAL_BUSINESS_JSON_LD = {
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "4/12 South Street, Pukkulam",
-    "addressLocality": "Udumalpet",
+    "streetAddress": "4/12, South Street, Pukkulam - Venesapatti Rd",
+    "addressLocality": "Udumalaipettai",
     "addressRegion": "Tamil Nadu",
     "postalCode": "642154",
     "addressCountry": "IN"
@@ -82,6 +96,10 @@ const LOCAL_BUSINESS_JSON_LD = {
     "latitude": 10.5847,
     "longitude": 77.2439
   },
+  "areaServed": [
+    { "@type": "State", "name": "Tamil Nadu" },
+    { "@type": "Country", "name": "India" }
+  ],
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": [
@@ -91,17 +109,19 @@ const LOCAL_BUSINESS_JSON_LD = {
       "Thursday",
       "Friday"
     ],
-    "opens": "09:00",
-    "closes": "18:00"
+    "opens": "00:00",
+    "closes": "23:59"
   },
   "sameAs": [
     "https://www.linkedin.com/in/senthil-kumar-6786b6246/",
     "https://www.instagram.com/mlforgestudio?igsh=N2E4cWUwYmllZ2Vz",
-    "https://mlforge.in",
-    "https://crm.mlforge.in",
-    "https://social.mlforge.in",
-    "https://lottery.mlforge.in",
-    "https://lead.mlforge.in"
+    "https://maps.app.goo.gl/iW21V7h6SgrLgoNY8"
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CRM", "url": "https://crm.mlforge.in" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social media automation", "url": "https://social.mlforge.in" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lottery agency CRM", "url": "https://lottery.mlforge.in" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lead generation", "url": "https://lead.mlforge.in" } }
   ]
 };
 

@@ -8,7 +8,8 @@ import { ContactForm } from "@/components/sections/contact-form";
 import { FinalCta } from "@/components/sections/final-cta";
 
 const TITLE = "Support";
-const DESCRIPTION = "Talk to the people who would do the work.";
+const DESCRIPTION =
+  "Talk to the people who would do the work — MLForge Studio, Udumalpet, Tamil Nadu.";
 
 export const metadata: Metadata = {
   title: TITLE,

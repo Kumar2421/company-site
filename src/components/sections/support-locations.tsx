@@ -11,11 +11,12 @@ import { MonoLabel } from "@/components/ui/mono-label";
  * placeholders carried over from the layout.
  */
 const PRIMARY_LOCATION = {
-  city: "Pukkulam ",
+  city: "Pukkulam",
   address: [
-    "4/12 South Street , Pukkulam ", 
-    "Udumalpet - 642154 , Tamil Nadu",
-    "Phone : +91 8190099614"
+    "4/12, South Street, Pukkulam - Venesapatti Rd",
+    "Udumalaipettai, Tamil Nadu 642154",
+    "Phone: +91 81900 99614",
+    "Mon–Fri, open 24 hours. Closed Sat–Sun.",
   ],
   image: "/images/office-singapore.jpg",
 };
