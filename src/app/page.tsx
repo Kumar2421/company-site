@@ -7,12 +7,17 @@ import { Features } from "@/components/sections/features";
 import { Pocket } from "@/components/sections/pocket";
 import { Steps } from "@/components/sections/steps";
 import { Services } from "@/components/sections/services";
-import { Testimonials } from "@/components/sections/testimonials";
 import { Pricing } from "@/components/sections/pricing";
 import { Blog } from "@/components/sections/blog";
 import { FinalCta } from "@/components/sections/final-cta";
 
 export const metadata: Metadata = {
+  title: {
+    absolute:
+      "MLForge Studio — IT & Software Company in Udumalpet, Tamil Nadu | AI, Web & App Development",
+  },
+  description:
+    "MLForge Studio is an IT and software company in Udumalpet (Udumalaipettai), Pukkulam, Tamil Nadu. AI platform, custom software, web and app development, CRM and social media automation.",
   alternates: { canonical: "/" },
 };
 
@@ -35,7 +40,6 @@ export default function Home() {
         <Pocket />
         <Steps />
         <Services />
-        <Testimonials />
         <Pricing />
         <Blog />
         <FinalCta />

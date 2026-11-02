@@ -23,6 +23,7 @@ const COLUMNS: {
       { label: "Blog", href: "/category/all" },
       { label: "Support", href: "/support" },
       { label: "Locations", href: "/support#locations" },
+      { label: "IT Company in Udumalpet", href: "/udumalpet" },
     ],
   },
   {
@@ -42,7 +43,21 @@ export function SiteFooter() {
           <NovaLogo className="size-9" />
         </Link>
 
-        <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <address className="mt-6 max-w-[44ch] text-body text-ink-56 not-italic">
+          <span className="block font-medium text-ink">MLForge Studio</span>
+          <span className="block">
+            4/12, South Street, Pukkulam - Venesapatti Rd, Udumalpet
+            (Udumalaipettai), Tamil Nadu 642154
+          </span>
+          <a
+            href="tel:+918190099614"
+            className="inline-flex min-h-11 items-center transition-colors duration-150 hover:text-ink"
+          >
+            +91 81900 99614
+          </a>
+        </address>
+
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {COLUMNS.map((column) => (
             <nav key={column.heading} aria-label={column.heading}>
               <h2 className="text-body font-medium text-ink">

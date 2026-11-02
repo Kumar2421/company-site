@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const BASE_URL = "https://home.mlforge.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["/", "/company", "/support", "/category/all", "/privacy", "/terms"];
+  const routes = ["/", "/company", "/support", "/udumalpet", "/category/all", "/privacy", "/terms"];
 
   return routes.map((route) => ({
     url: `${BASE_URL}${route}`,

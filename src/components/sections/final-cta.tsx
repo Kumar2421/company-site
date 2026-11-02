@@ -12,6 +12,12 @@ export function FinalCta() {
           Bring us the AI work your roadmap keeps deferring.
         </Reveal>
 
+        <Reveal delay={50} className="mt-5">
+          <p className="max-w-[40ch] text-lead text-ink-60">
+            Based in Udumalpet, Tamil Nadu — talk to us.
+          </p>
+        </Reveal>
+
         <Reveal delay={100} className="mt-10">
           <NovaButtonLink href="/support#contact" size="md">
             Book a discovery call

@@ -55,7 +55,9 @@ export function CompanyHero() {
           <Reveal as="p" className="max-w-[424px] text-body text-ink-60">
             MLForge Studio builds software and AI systems for teams that already
             have a production estate to protect. We work inside your stack, your
-            review process and your security constraints.
+            review process and your security constraints. We&apos;re based in
+            Pukkulam, Udumalpet, and work with teams across Tamil Nadu and
+            remotely across India.
           </Reveal>
 
           <Reveal delay={100} className="md:justify-self-end">

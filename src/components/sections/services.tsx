@@ -63,6 +63,11 @@ export function Services() {
             An AI platform, a CRM, social automation and the custom builds to
             connect them.
           </h2>
+
+          <p className="mt-5 max-w-[52ch] text-lead text-ink-60">
+            Built from our office in Pukkulam, Udumalpet, for teams in Tiruppur,
+            Coimbatore, Palani, Pollachi and across India.
+          </p>
         </Reveal>
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

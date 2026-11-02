@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { AREA_KEYWORDS, AREA_NAMES } from "@/lib/seo";
 
 const SITE_URL = "https://home.mlforge.in";
 const DEFAULT_TITLE = "MLForge Studio — Take AI from pilot to production";
@@ -44,7 +45,12 @@ export const metadata: Metadata = {
     "Enterprise AI Systems",
     "React Native developers India",
     "Next.js app agency",
-    "Lottery Agency CRM"
+    "Lottery Agency CRM",
+    "Udumalpet IT company",
+    "AI company in Udumalpet",
+    "Pukkulam IT company",
+    "Tiruppur district software company",
+    ...AREA_KEYWORDS,
   ],
 };
 
@@ -87,6 +93,7 @@ const LOCAL_BUSINESS_JSON_LD = {
     "@type": "PostalAddress",
     "streetAddress": "4/12, South Street, Pukkulam - Venesapatti Rd",
     "addressLocality": "Udumalaipettai",
+    "addressSubregion": "Tiruppur",
     "addressRegion": "Tamil Nadu",
     "postalCode": "642154",
     "addressCountry": "IN"
@@ -96,7 +103,9 @@ const LOCAL_BUSINESS_JSON_LD = {
     "latitude": 10.5847,
     "longitude": 77.2439
   },
+  "alternateName": ["MLForge Udumalpet", "MLForge IT Company Udumalpet"],
   "areaServed": [
+    ...AREA_NAMES.map((name) => ({ "@type": "City", name })),
     { "@type": "State", "name": "Tamil Nadu" },
     { "@type": "Country", "name": "India" }
   ],

@@ -2,17 +2,16 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SupportHero } from "@/components/sections/support-hero";
-import { SupportNumbers } from "@/components/sections/support-numbers";
 import { SupportLocations } from "@/components/sections/support-locations";
 import { ContactForm } from "@/components/sections/contact-form";
 import { FinalCta } from "@/components/sections/final-cta";
 
-const TITLE = "Support";
+const TITLE = "Contact MLForge Studio — IT Company in Udumalpet";
 const DESCRIPTION =
   "Talk to the people who would do the work — MLForge Studio, Udumalpet, Tamil Nadu.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: "/support" },
   openGraph: { title: TITLE, description: DESCRIPTION, url: "/support" },
@@ -33,7 +32,6 @@ export default function SupportPage() {
 
       <main id="main" className="flex-1">
         <SupportHero />
-        <SupportNumbers />
         <SupportLocations />
 
         <section className="container-column py-20 sm:py-28">

@@ -1,11 +1,17 @@
 import Image from "next/image";
 import { NovaButtonLink, ButtonArrow } from "@/components/ui/nova-button";
 import { HeroDashboard } from "@/components/hero-dashboard";
+import { MonoLabel } from "@/components/ui/mono-label";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-24 pb-0 sm:pt-32">
+    <section id="top" className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-0">
       <div className="container-column text-center">
+        <MonoLabel className="mx-auto mb-6 flex w-fit items-center gap-2 text-ink">
+          <span aria-hidden className="size-1.5 rounded-full bg-brand" />
+          IT & software company · Udumalpet, Tamil Nadu
+        </MonoLabel>
+
         <h1 className="text-[clamp(2.75rem,8vw,4.25rem)] leading-[1.02] font-medium tracking-[-0.04em] text-balance">
           Production-grade custom software & AI platforms
         </h1>
@@ -22,7 +28,7 @@ export function Hero() {
 
       {/* Console flanked by the two 3D blobs, which now peek from behind its
           upper corners rather than framing a narrow phone. */}
-      <div className="relative mt-16">
+      <div className="relative mt-16 hidden sm:block">
         <Image
           src="/images/blob-cross.png"
           alt=""

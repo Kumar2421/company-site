@@ -39,7 +39,7 @@ export function SupportLocations() {
           <Reveal as="li" className="grid gap-4 md:grid-cols-2">
             <Image
               src={PRIMARY_LOCATION.image}
-              alt=""
+              alt="MLForge Studio office, Pukkulam, Udumalpet"
               width={900}
               height={680}
               sizes="(max-width: 768px) 100vw, 424px"
