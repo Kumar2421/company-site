@@ -5,23 +5,23 @@ import { Reveal } from "@/components/reveal";
 const FEATURES: { icon: ReactNode; title: string; body: string }[] = [
   {
     icon: <Grid className="size-5" />,
-    title: "Ship into systems you already run",
-    body: "We integrate with your existing stack, data and access controls instead of asking you to replace them.",
+    title: "Fits the tools you already use",
+    body: "We connect to your existing software and data instead of asking you to replace them.",
   },
   {
     icon: <BarChart className="size-5" />,
-    title: "Prove it before it ships",
-    body: "Every release is gated on an evaluation suite, so quality is measured rather than asserted.",
+    title: "Tested before every release",
+    body: "Each release is checked against a written test plan, so you see what works before your users do.",
   },
   {
     icon: <Bell className="size-5" />,
-    title: "Know when it drifts",
-    body: "Monitoring for accuracy, latency and cost, with alerts that reach the team that owns the service.",
+    title: "Support after launch",
+    body: "We watch performance and errors after go-live, and fix issues fast instead of disappearing.",
   },
   {
     icon: <Sparkle className="size-5" />,
-    title: "Hand over, not hold hostage",
-    body: "Your engineers get the code, the docs and the runbooks. No lock-in to us.",
+    title: "You own the code",
+    body: "You get the source code, the documentation and a handover session. No lock-in to us.",
   },
 ];
 

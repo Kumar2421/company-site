@@ -28,8 +28,8 @@ const STEPS: {
     kicker: "Lead generation",
     title: "Find who needs you before your competitors do",
     body: "Prospecting and enrichment surfaced against your ICP filters — search, tag and route leads straight into the pipeline, ranked by intent.",
-    panelTitle: "leads.mlforge.in",
-    href: "https://leads.mlforge.in",
+    panelTitle: "lead.mlforge.in",
+    href: "https://lead.mlforge.in",
     screen: <LeadGenScreen />,
   },
   {

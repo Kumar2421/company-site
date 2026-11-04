@@ -24,13 +24,13 @@ const SERVICES: { icon: ReactNode; title: string; body: string }[] = [
   },
   {
     icon: <Bell className="size-5" />,
-    title: "Social media automation",
+    title: " seo & geo automation",
     body: "Plan, schedule and publish across every channel from one queue, with sync status tracked per account.",
   },
   {
     icon: <Grid className="size-5" />,
     title: "Custom software development",
-    body: "Web applications, APIs and internal platforms delivered by a senior team inside your own review process.",
+    body: "Web applications, APIs and internal tools — ERP, billing, inventory, e-commerce or anything your business needs, built by a developer-led team.",
   },
   {
     icon: <Phone className="size-5" />,
@@ -47,6 +47,11 @@ const SERVICES: { icon: ReactNode; title: string; body: string }[] = [
     title: "Lottery agency CRM",
     body: "A dedicated CRM for lottery agencies — ticket sales, agent commissions and payouts tracked in one system.",
   },
+  {
+    icon: <Sparkle className="size-5" />,
+    title: "Something else in mind?",
+    body: "These are examples of what we've built. If you can describe it, we can build it — tell us what your business needs.",
+  },
 ];
 
 export function Services() {
@@ -60,8 +65,8 @@ export function Services() {
           </MonoLabel>
 
           <h2 className="mt-6 max-w-[28ch] text-h2 text-balance">
-            An AI platform, a CRM, social automation and the custom builds to
-            connect them.
+            Software built around your business — web, mobile, AI, automation
+            and more.
           </h2>
 
           <p className="mt-5 max-w-[52ch] text-lead text-ink-60">

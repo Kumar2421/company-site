@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { FinalCta } from "@/components/sections/final-cta";
 import { Reveal } from "@/components/reveal";
 import { ButtonArrow } from "@/components/ui/nova-button";
-import { AREA_KEYWORDS, SERVICE_AREAS } from "@/lib/seo";
+import { AREA_KEYWORDS, SERVICE_AREAS, SERVICE_KEYWORDS } from "@/lib/seo";
 
 const TITLE = "IT Company in Udumalpet (Udumalaipettai), Tamil Nadu";
 const DESCRIPTION =
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     "web development Udumalpet",
     "app development Udumalpet",
     "Tiruppur district software company",
+    ...SERVICE_KEYWORDS,
     ...AREA_KEYWORDS,
   ],
   alternates: { canonical: "/udumalpet" },
@@ -30,12 +31,16 @@ export const metadata: Metadata = {
 
 const SERVICES = [
   {
-    title: "AI platform development",
-    body: "Train, deploy and run AI models inside the systems your business already uses.",
+    title: "Custom software development",
+    body: "Business software built around how you work — ERP, billing, inventory, internal tools and more.",
   },
   {
-    title: "Custom software, web and app development",
-    body: "Web apps, mobile apps and custom business software built and maintained by one team.",
+    title: "Web and mobile app development",
+    body: "Websites, web applications and Android and iOS apps, built and maintained by one team.",
+  },
+  {
+    title: "AI and automation",
+    body: "AI that works from your own data, and automation that removes repetitive manual work.",
   },
   {
     title: "CRM and lead management",
@@ -46,8 +51,8 @@ const SERVICES = [
     body: "Schedule and publish across every channel from one place.",
   },
   {
-    title: "Lottery agency CRM",
-    body: "Software built for lottery agents and retailers.",
+    title: "Something else?",
+    body: "If you can describe it, we can build it. Tell us what your business needs.",
   },
 ];
 

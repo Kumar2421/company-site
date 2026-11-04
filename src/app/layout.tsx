@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { AREA_KEYWORDS, AREA_NAMES } from "@/lib/seo";
+import { AREA_KEYWORDS, AREA_NAMES, SERVICE_KEYWORDS } from "@/lib/seo";
 
 const SITE_URL = "https://home.mlforge.in";
-const DEFAULT_TITLE = "MLForge Studio — Take AI from pilot to production";
+const DEFAULT_TITLE =
+  "MLForge Studio — Custom software company in Udumalpet, Tamil Nadu";
 const DEFAULT_DESCRIPTION =
-  "MLForge Studio designs, builds and runs AI and software inside the systems your business already depends on. AI platform, CRM, social automation and custom software development.";
+  "MLForge Studio is a developer-led software company in Udumalpet, Tamil Nadu. We build custom software — web and mobile apps, CRM, AI and automation — for businesses across India.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -50,6 +51,7 @@ export const metadata: Metadata = {
     "AI company in Udumalpet",
     "Pukkulam IT company",
     "Tiruppur district software company",
+    ...SERVICE_KEYWORDS,
     ...AREA_KEYWORDS,
   ],
 };

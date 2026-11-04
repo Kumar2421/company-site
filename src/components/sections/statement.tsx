@@ -1,10 +1,4 @@
-import { PhoneMockup } from "@/components/app-ui";
-import {
-  ChatScreen,
-  DispatchScreen,
-  FeedScreen,
-  MapsScreen,
-} from "@/components/mobile-showcase-ui";
+import { OfficeMap } from "@/components/office-map";
 import { Reveal } from "@/components/reveal";
 import { MonoLabel } from "@/components/ui/mono-label";
 
@@ -22,27 +16,17 @@ export function Statement() {
             Messaging, social, dispatch, maps — one team ships whatever the
             product needs.
           </h2>
+
+          <p className="mx-auto mt-5 max-w-[46ch] text-lead text-ink-60 text-balance">
+            Built from Pukkulam, Udumalpet in Tamil Nadu, for teams across
+            India.
+          </p>
         </Reveal>
       </div>
 
       <div className="container-bleed mt-16">
-        <Reveal
-          direction="none"
-          delay={100}
-          className="nova-dotfield flex items-end justify-center overflow-hidden rounded-panel bg-[#ececec] px-4 pt-14 pb-0 sm:px-10"
-        >
-          <PhoneMockup className="w-[190px] shrink-0 translate-y-6 rotate-[-8deg] sm:w-[220px]">
-            <ChatScreen />
-          </PhoneMockup>
-          <PhoneMockup className="z-10 -ml-10 w-[240px] shrink-0 rotate-[-2deg] sm:-ml-14 sm:w-[280px]">
-            <FeedScreen />
-          </PhoneMockup>
-          <PhoneMockup className="z-10 -ml-10 w-[240px] shrink-0 rotate-[2deg] sm:-ml-14 sm:w-[280px]">
-            <DispatchScreen />
-          </PhoneMockup>
-          <PhoneMockup className="-ml-10 w-[190px] shrink-0 translate-y-6 rotate-[8deg] sm:-ml-14 sm:w-[220px]">
-            <MapsScreen />
-          </PhoneMockup>
+        <Reveal direction="none" delay={100}>
+          <OfficeMap />
         </Reveal>
       </div>
     </section>

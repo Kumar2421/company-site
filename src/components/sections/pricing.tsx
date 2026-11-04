@@ -7,14 +7,14 @@ import { NovaButtonLink } from "@/components/ui/nova-button";
 import { Reveal } from "@/components/reveal";
 
 const FEATURES = [
-  "Architecture & delivery plan",
+  "Plan & estimate",
   "Build & integration",
-  "Evaluation suite",
-  "Monitoring & handover",
+  "Testing",
+  "Launch, handover & training",
 ];
 
 /** Discovery ends at a plan, so the build-side rows are scoped down or absent. */
-const BASIC = [true, false, "Eval plan only", false] as const;
+const BASIC = [true, false, "Test plan only", false] as const;
 
 export function Pricing() {
   /** Retainer cadence for the pod — quarterly commitments get planning runway. */
@@ -27,7 +27,7 @@ export function Pricing() {
           How we engage
         </Reveal>
         <Reveal as="p" delay={50} className="mt-4 text-lead text-ink-60">
-          Start with a scoped discovery. Move to a pod when the plan is signed off.
+          Start with a scoped discovery. Move to an ongoing team when the plan is signed off.
         </Reveal>
 
         <div className="mt-14 grid gap-4 text-left md:grid-cols-2">
@@ -36,7 +36,7 @@ export function Pricing() {
             delay={100}
             className="flex flex-col rounded-card bg-surface p-8 shadow-card"
           >
-            <h3 className="text-h3">Discovery sprint</h3>
+            <h3 className="text-h3">Discovery</h3>
             <p className="mt-2 text-h4 text-brand">Two weeks, fixed fee</p>
 
             <ul className="mt-8 flex-1">
@@ -73,7 +73,7 @@ export function Pricing() {
             className="flex flex-col rounded-card bg-surface p-8 shadow-card"
           >
             <div className="flex items-center justify-between gap-4">
-              <h3 className="text-h3">Embedded pod</h3>
+              <h3 className="text-h3">Ongoing team</h3>
 
               <label className="flex cursor-pointer items-center gap-2">
                 <span className="font-mono text-mono-xs tracking-[0.06em] text-brand uppercase">
@@ -118,7 +118,7 @@ export function Pricing() {
             </ul>
 
             <NovaButtonLink href="/support#contact" className="mt-8 w-full">
-              Talk about a pod
+              Talk about an ongoing team
             </NovaButtonLink>
           </Reveal>
         </div>

@@ -89,7 +89,7 @@ export function ContactForm() {
 
       {status === "error" && (
         <p role="alert" className="text-small text-[#b5651d]">
-          Something went wrong — try again, or email us directly.
+          Something went wrong — try again, or call +91 81900 99614.
         </p>
       )}
 

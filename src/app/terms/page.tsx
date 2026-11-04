@@ -36,7 +36,7 @@ const SECTIONS = [
   },
   {
     heading: "Governing law",
-    body: "These terms are governed by the laws of [jurisdiction], without regard to conflict-of-law principles.",
+    body: "These terms are governed by the laws of India, without regard to conflict-of-law principles.",
   },
   {
     heading: "Changes to these terms",
@@ -60,9 +60,7 @@ export default function TermsPage() {
         <section className="container-column py-20 sm:py-28">
           <h1 className="text-h2">{TITLE}</h1>
           <p className="mt-3 text-body text-ink-56">
-            Last updated: [date]. This is a template — have it reviewed by
-            counsel before publishing, and replace bracketed placeholders with
-            your real jurisdiction and entity details.
+            Last updated: 4 November 2026.
           </p>
 
           <div className="mt-12 flex max-w-[68ch] flex-col gap-8">
@@ -76,7 +74,7 @@ export default function TermsPage() {
             <div>
               <h2 className="text-lead font-medium">Contact</h2>
               <p className="mt-2 text-body text-ink-60">
-                Questions about these terms — [contact email].
+                Questions about these terms — call +91 81900 99614 or write to MLForge Studio, 4/12, South Street, Pukkulam - Venesapatti Rd, Udumalaipettai, Tamil Nadu 642154, India.
               </p>
             </div>
           </div>

@@ -8,8 +8,8 @@ const VALUES = [
     body: "Plain estimates, named owners, and a written plan before any code ships.",
   },
   {
-    title: "Evidence",
-    body: "We measure quality with evaluation suites instead of asking you to trust a demo.",
+    title: "Testing",
+    body: "Every release is tested before it reaches your users, and you see the results.",
   },
   {
     title: "Handover",
@@ -32,7 +32,7 @@ export function CompanyHero() {
 
       <div className="container-column">
         <h1 className="max-w-[648px] text-[clamp(2.25rem,6vw,4.25rem)] leading-none font-medium tracking-[-0.04em]">
-          A delivery team, not a demo shop
+          Developers who build what your business needs
         </h1>
 
         <Reveal
@@ -53,10 +53,10 @@ export function CompanyHero() {
 
         <div className="mt-20 grid items-start gap-8 md:grid-cols-2">
           <Reveal as="p" className="max-w-[424px] text-body text-ink-60">
-            MLForge Studio builds software and AI systems for teams that already
-            have a production estate to protect. We work inside your stack, your
-            review process and your security constraints. We&apos;re based in
-            Pukkulam, Udumalpet, and work with teams across Tamil Nadu and
+            MLForge Studio is a developer-led software company. We build web and
+            mobile apps, CRM, AI and automation — whatever the business needs —
+            and work inside your existing tools and processes. We&apos;re based
+            in Pukkulam, Udumalpet, and work with teams across Tamil Nadu and
             remotely across India.
           </Reveal>
 

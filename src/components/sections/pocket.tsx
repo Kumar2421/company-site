@@ -9,15 +9,15 @@ import { Reveal } from "@/components/reveal";
 const TABS = [
   {
     title: "AI Platform",
-    body: "Train, evaluate and deploy your own models from one console — RAG, agents and forecasting with evals from day one.",
+    body: "AI that answers from your own documents, automates routine work and forecasts demand — trained and deployed from one console.",
   },
   {
     title: "CRM & social automation",
-    body: "A companies-and-deals CRM and a scheduling queue for every channel, both tailored to how your team actually sells.",
+    body: "A CRM for your deals and a scheduling queue for every social channel, both tailored to how your team actually sells.",
   },
   {
     title: "Custom software",
-    body: "Web, mobile and internal tooling built by a senior embedded team, inside your own review process.",
+    body: "Web apps, mobile apps and internal tools built by a developer-led team, around your own process.",
   },
 ];
 
@@ -38,7 +38,7 @@ export function Pocket() {
       <div className="rounded-t-panel bg-dark px-6 py-20 text-on-dark sm:px-12 sm:py-28">
         <div className="mx-auto max-w-[872px]">
           <Reveal as="h2" className="max-w-[18ch] text-h2 text-balance">
-            Three practices, one delivery team.
+            Three practices, one development team.
           </Reveal>
 
           <Reveal delay={100} className="mt-14">

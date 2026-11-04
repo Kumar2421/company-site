@@ -34,3 +34,17 @@ export const AREA_KEYWORDS: readonly string[] = AREA_NAMES.flatMap((name) => [
   `website development ${name}`,
   `app development ${name}`,
 ]);
+
+/** Capability phrases, independent of town. */
+export const SERVICE_KEYWORDS: readonly string[] = [
+  "custom software development",
+  "web application development",
+  "mobile app development",
+  "website development company",
+  "ERP software development",
+  "billing and inventory software",
+  "e-commerce website development",
+  "CRM software development",
+  "AI automation company",
+  "software development company India",
+];
